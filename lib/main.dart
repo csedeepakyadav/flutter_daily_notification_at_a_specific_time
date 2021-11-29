@@ -38,6 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
     notificationRepo.configureLocalTimeZone().then((value) {
       notificationRepo.initNoti();
       notificationRepo.scheduleDailyTenAMNotification();
+      notificationRepo.scheduleDailyT1PMNotification();
+      notificationRepo.scheduleDailyT3PMNotification();
     });
   }
 
