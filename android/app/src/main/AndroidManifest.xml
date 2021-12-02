@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.supercoder.periodicnotificationdaily">
+     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
    <application
-        android:label="periodicnotificationdaily"
+        android:label="Notify Daily App"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -37,5 +38,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+            <service
+            android:name="com.dexterous.flutterlocalnotifications.ForegroundService"        
+            android:exported="false"
+            android:stopWithTask="false"/>
+
     </application>
 </manifest>
